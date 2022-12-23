@@ -241,3 +241,48 @@ template <class T>
 typename SMVector <T>::iterator SMVector<T>::end(){
     return iterator(vector+size);
 }
+
+template <class T>
+bool SMVector<T>::operator == (const SMVector<T> &vec) {
+    int count = 0;
+    if (size == vec.size) {
+        for (size_t i = 0; i < size; i++) {
+            if (vector[i] == vec.vector[i]) {
+                count++;
+            }
+        }
+        if (count == size)
+            return true;
+
+        else
+            return false;
+    }
+    else
+        return false;
+}
+
+template <class T>
+bool SMVector<T>:: operator < (const SMVector<T>& vec){
+    int count = 0;
+    if(size < vec.size)
+        return true;
+
+    else if(size==vec.size) {
+        for (size_t i = 0; i < size; i++) {
+            if (vector[i] < vec.vector[i])
+                count++;
+        }
+
+        if (count > 0)
+            return true;
+        else
+            return false;
+    }
+    else if(size > vec.size)
+        return false;
+}
+
+template <class T>
+int SMVector<T>::Size() {
+    return size;
+}
