@@ -232,4 +232,12 @@ void SMVector<T>::insert(iterator it , T item) {
 
 }
 
+template <class T>
+typename SMVector <T>::iterator SMVector<T>::begin(){
+    return iterator(vector);
+}
 
+template <class T>
+typename SMVector <T>::iterator SMVector<T>::end(){
+    return iterator(vector+size);
+}
