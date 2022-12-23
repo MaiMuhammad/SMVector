@@ -286,3 +286,46 @@ template <class T>
 int SMVector<T>::Size() {
     return size;
 }
+
+template <class T>
+int SMVector<T>::Capacity(){
+    return capacity;
+}
+
+template <class T>
+int SMVector<T>::resize() {
+    for(int i=size; i< size*2; i++){
+        vector[i]=0;
+    }
+    size = size*2;
+    cout<<"Resize to ";
+    return size;
+}
+
+template <class T>
+bool SMVector<T>::empty() {
+    if(size == 0){
+        return true;
+    }
+    else
+        return false;
+}
+
+template<class T>
+ostream & operator << (ostream& out, SMVector<T> &vec){
+    if(vec.Size()==0){
+        cout<<"The vector is empty!\n";
+    }
+    else {
+        out << "[";
+        for (auto i = vec.begin(); i < vec.end(); i++) {
+
+            if (i < vec.end()-1) {
+                out << *i << ", ";
+            } else
+                cout << *i;
+        }
+        out << "]" << endl;
+    }
+    return out;
+}
