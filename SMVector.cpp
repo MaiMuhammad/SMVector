@@ -16,6 +16,7 @@ int main(){
     vec2.push_back( 6);
     vec2.push_back( 9);
 
+    
 //    vec.pop_back();
 //    vec.erase(vec.begin(), vec.end());
 //    vec.erase(vec.begin());
